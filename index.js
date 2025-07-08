@@ -6,9 +6,19 @@ app.listen(port, ()=>{
     console.log(`app is listening on ${port}`);
 });
 
-app.use((req, res) =>{
-    console.log(`request recieved`);
-    //res.send(`this is basic response`);
-    let code= `<h1>fruits</h1><br><p>apple</p><p>mango<p/>`;
-    res.send(code);
+// app.use((req, res) =>{
+//     console.log(`request recieved`);
+//     //res.send(`this is basic response`);
+//     let code= `<h1>fruits</h1><br><p>apple</p><p>mango<p/>`;
+//     res.send(code);
+// });
+
+app.get(`/`,(req,res) => {
+    res.send(`you contacted root`);
+});
+app.get(`/apple`,(req,res) => {
+    res.send(`you contacted apple`);
+});
+app.get(`/orange`,(req,res) => {
+    res.send(`you contacted orange`);
 });
