@@ -28,6 +28,12 @@ app.get(`/:username/:id`,(req,res)=>{
     res.send(`Welcome to page of @${username}`);
 });
 app.get(`/search`,(req,res)=>{
-    console.log(req.query);
-    res.send(`no result`);
+    let {q} =req.query;
+    if(!q){
+        res.send(`nothing searched`);
+    }
+    // console.log(req.query);
+    res.send(`<h1>search results for query: ${q}</h1>`);
 });
+//req link is
+//http://localhost:8080/search?q="apple"&color=:green"
