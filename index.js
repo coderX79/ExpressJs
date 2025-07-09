@@ -23,6 +23,7 @@ app.get(`/mango`,(req,res) => {
     res.send(`you contacted mango`);
 });
 app.get(`/:username/:id`,(req,res)=>{
-    console.log(req.params);
-    res.send(`hello, i am root`)
-})
+    //console.log(req.params);
+    let {username, id} = req.params;
+    res.send(`Welcome to page of @${username}`);
+});
