@@ -19,6 +19,10 @@ app.get(`/`,(req,res) => {
 app.get(`/apple`,(req,res) => {
     res.send(`you contacted apple`);
 });
-app.get(`/orange`,(req,res) => {
-    res.send(`you contacted orange`);
+app.get(`/mango`,(req,res) => {
+    res.send(`you contacted mango`);
 });
+app.get(`/:username/:id`,(req,res)=>{
+    console.log(req.params);
+    res.send(`hello, i am root`)
+})
